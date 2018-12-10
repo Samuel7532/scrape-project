@@ -5,7 +5,7 @@ var axios = require("axios");
 var mongoose = require("mongoose");
 
 var Articles = require("../models/articles.js");
-var Comments = require("../models/notes.js");
+var Notes = require("../models/notes.js");
 
 var router = express.Router();
 
@@ -89,6 +89,7 @@ router.get("/scrape", function(req, res) {
   
   // Route for grabbing a specific Article by id, populate it with it's note
   router.get("/articles/:id", function(req, res) {
+    Articles
     // TODO
     // ====
     // Finish the route so it finds one article using the req.params.id,
@@ -98,6 +99,7 @@ router.get("/scrape", function(req, res) {
   
   // Route for saving/updating an Article's associated Note
   router.post("/articles/:id", function(req, res) {
+    Notes.create()
     // TODO
     // ====
     // save the new note that gets posted to the Notes collection
